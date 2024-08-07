@@ -8,8 +8,21 @@ Test work from UTF
 {% block content %}
 <div class="container-fluid main">
     <div class="row">
-        <div class="col-12">
-            <h3>Welcome to UTF</h3>
+        <div class="col-3">
+            <h3>Категории блюд</h3>
+            <ul>
+                {% for food_category in food_categories %}
+                <li>{{ food_category }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-9">
+            <h3>Блюда</h3>
+            <ul>
+                {% for food in foods %}
+                <li>{{ food }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>

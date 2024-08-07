@@ -6,6 +6,9 @@ from rest_framework import serializers
 
 
 class FoodCategory(TimeStampedModel):
+    """
+    - категория блюд
+    """
     name_ru = models.CharField(verbose_name='Название на русском', max_length=255, unique=True)
     name_en = models.CharField(verbose_name='Название на английском', max_length=255,
                                unique=True, blank=True, null=True)
@@ -23,6 +26,9 @@ class FoodCategory(TimeStampedModel):
 
 
 class Food(TimeStampedModel):
+    """
+    - блюда
+    """
     category = models.ForeignKey(FoodCategory, verbose_name='Раздел меню',
                                  related_name='food', on_delete=models.CASCADE)
 
